@@ -53,6 +53,14 @@ nav a:hover {
     padding-top: 80px;
 }
 
+.hero-text-box {
+    background-color: rgba(0, 0, 0, 0.5); /* прозрачен черен фон */
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: inline-block;
+    backdrop-filter: blur(2px); /* по желание: лек замъглен ефект */
+}
+
 .hero-text h1 {
     font-size: 3em;
     margin-bottom: 10px;
