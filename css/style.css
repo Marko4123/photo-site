@@ -83,34 +83,55 @@ body, html {
   .header-right a:hover {
     color: #00ff5e;
   }
-  /* Хамбургер бутон */
+/* Хамбургер бутон */
 .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    z-index: 10000;
+    transition: transform 0.3s ease;
   }
   
   .hamburger span {
     width: 25px;
     height: 3px;
     background-color: #fff;
+    transition: all 0.3s ease;
   }
   
-  /* Мобилно меню */
+  /* Трансформация в X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
   .mobile-menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     inset: 0;
     background: #111;
     color: #fff;
     z-index: 9999;
-    flex-direction: column;
     padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   }
   
   .mobile-menu.open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   
   .mobile-top {

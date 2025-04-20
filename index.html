@@ -89,10 +89,12 @@
 
       hamburger.addEventListener("click", () => {
         mobileMenu.classList.add("open");
+        hamburger.classList.add("active"); // ☰ ➜ ✖
       });
 
       closeBtn.addEventListener("click", () => {
         mobileMenu.classList.remove("open");
+        hamburger.classList.remove("active");
       });
     </script>
   </body>
