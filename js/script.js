@@ -1,8 +1,9 @@
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
-    preloader.style.opacity = "0";
-
     setTimeout(() => {
-        preloader.style.display = "none";
-    }, 600); // същото като CSS transition
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 800); // същото като CSS transition
+    }, 2600); // изчаква края на лоудинг анимацията
 });
