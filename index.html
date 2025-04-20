@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Моята Фотография</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -17,26 +23,28 @@
       </div>
       <p class="loading-text">зареждане...</p>
     </div>
-    <header>
-      <div class="header-container">
+    <header class="site-header">
+      <div class="header-wrapper">
         <!-- Лого вляво -->
-        <div class="logo">
-          <img src="images/logo.png" alt="Marko Uzunov logo" />
+        <div class="header-left">
+          <img src="images/logo.png" alt="Лого" class="logo" />
         </div>
 
         <!-- Меню в центъра -->
-        <ul class="nav-menu">
-          <li><a href="#">Начало</a></li>
-          <li><a href="#">Албуми</a></li>
-          <li><a href="#">Блог</a></li>
-          <li><a href="#">Контакт</a></li>
-        </ul>
+        <nav class="header-center">
+          <ul>
+            <li><a href="#">Начало</a></li>
+            <li><a href="#">Албуми</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакт</a></li>
+          </ul>
+        </nav>
 
         <!-- Иконки вдясно -->
-        <div class="social-icons">
+        <div class="header-right">
           <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
         </div>
       </div>
     </header>
@@ -50,5 +58,13 @@
       </div>
     </section>
     <script src="js/script.js"></script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>

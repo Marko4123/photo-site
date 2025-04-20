@@ -5,86 +5,82 @@
 }
 
 body, html {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Exo 2", sans-serif;
     height: 100%;
     background-color: #111;
     color: #fff;
 }
 
-/* Header основа */
-header {
+/* Основни стилове за Flex менюто */
+.site-header {
     background-color: rgba(0, 0, 0, 0.7);
-    height: 70px;
+    padding: 15px 0;
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
   }
   
-  /* Контейнер за позициониране */
-  .header-container {
-    position: relative;
-    height: 100%;
-    width: 100%;
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
   }
   
-  /* Лого - 20px отляво */
-  .logo {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+  .header-left,
+  .header-center,
+  .header-right {
     display: flex;
     align-items: center;
   }
   
-  .logo img {
-    height: 50px;
+  .header-left {
+    flex: 1;
   }
   
-  /* Меню - в центъра */
-  .nav-menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 30px;
+  .header-left .logo {
+    height: 40px;
+  }
+  
+  .header-center {
+    flex: 2;
+    justify-content: center;
+  }
+  
+  .header-center ul {
     list-style: none;
-    margin: 0;
+    display: flex;
+    gap: 40px;
     padding: 0;
+    margin: 0;
   }
   
-  .nav-menu li a {
+  .header-center a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1em;
+    font-weight: bold;
     text-transform: uppercase;
-    font-weight: 500;
+    font-size: 0.9em;
     transition: color 0.3s;
-    letter-spacing: 1px;
   }
-  
-  .nav-menu li a:hover {
+
+  .header-center li a:hover {
     color: #00ff5e;
   }
   
-  /* Социални иконки - 20px отдясно */
-  .social-icons {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 15px;
-  }
-  
-  .social-icons a {
-    color: #aaa;
-    font-size: 1.2em;
+  .header-right {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 20px;
     transition: color 0.3s;
   }
   
-  .social-icons a:hover {
+  .header-right a {
+    color: #fff;
+    font-size: 1.2em;
+  }
+  .header-right a:hover {
     color: #00ff5e;
   }
 
@@ -169,3 +165,5 @@ header {
         opacity: 1;
     }
 }
+
+  
