@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Моята Фотография</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -14,14 +18,27 @@
       <p class="loading-text">зареждане...</p>
     </div>
     <header>
-      <div class="logo">📸 Моята Галерия</div>
-      <nav>
-        <ul>
+      <div class="header-container">
+        <!-- Лого вляво -->
+        <div class="logo">
+          <img src="images/logo.png" alt="Marko Uzunov logo" />
+        </div>
+
+        <!-- Меню в центъра -->
+        <ul class="nav-menu">
           <li><a href="#">Начало</a></li>
           <li><a href="#">Албуми</a></li>
+          <li><a href="#">Блог</a></li>
           <li><a href="#">Контакт</a></li>
         </ul>
-      </nav>
+
+        <!-- Иконки вдясно -->
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
     </header>
 
     <section class="hero">

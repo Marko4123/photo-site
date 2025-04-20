@@ -11,37 +11,82 @@ body, html {
     color: #fff;
 }
 
+/* Header основа */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
     background-color: rgba(0, 0, 0, 0.7);
+    height: 70px;
     position: fixed;
     width: 100%;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
+    z-index: 1000;
+  }
+  
+  /* Контейнер за позициониране */
+  .header-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Лого - 20px отляво */
+  .logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    gap: 20px;
-}
-
-nav a {
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  /* Меню - в центъра */
+  .nav-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 500;
     transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #f0a500;
-}
+    letter-spacing: 1px;
+  }
+  
+  .nav-menu li a:hover {
+    color: #00ff5e;
+  }
+  
+  /* Социални иконки - 20px отдясно */
+  .social-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: #aaa;
+    font-size: 1.2em;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #00ff5e;
+  }
 
 .hero {
     height: 100vh;
