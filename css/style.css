@@ -154,6 +154,14 @@ body, html {
   margin: 20px 0;
   justify-content: center;
   }
+  .mobile-social a {
+    color: #fff;
+  }
+    /* Hover ефект за социалните иконки */
+    .mobile-social a:hover {
+        color: #00ff5e; 
+        transition: color 0.3s ease;
+      }
   
   .mobile-links {
     list-style: none;
@@ -171,6 +179,13 @@ body, html {
     font-size: 1.3em;
     text-transform: uppercase;
   }
+  /* Hover ефект за линковете в мобилното меню */
+.mobile-links li a:hover {
+    color: #00ff5e;
+    transition: color 0.3s ease;
+  }
+  
+
 
 .hero {
     height: 100vh;
@@ -255,6 +270,38 @@ body, html {
 }
 
 @media (max-width: 768px) {
+    /* Намаляваме основния текст */
+  body {
+    font-size: 14px;
+  }
+
+  /* Централно меню (ако се вижда някъде) */
+  .header-center a {
+    font-size: 0.8em;
+  }
+
+  /* Мобилни линкове */
+  .mobile-links li a {
+    font-size: 1.1em;
+  }
+
+  /* Социалните иконки */
+  .mobile-social a {
+    font-size: 1.2em;
+  }
+
+  /* Заглавия ако имаш */
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 0.95em;
+  }
     .header-center,
     .header-right {
       display: none;
