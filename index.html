@@ -17,72 +17,85 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="preloader">
-      <img src="images/logo.png" alt="Лого" class="preload-logo" />
-      <div class="loader-bar">
-        <div class="bar"></div>
+    <div class="wrapper">
+      <div id="preloader">
+        <img src="images/logo.png" alt="Лого" class="preload-logo" />
+        <div class="loader-bar">
+          <div class="bar"></div>
+        </div>
+        <p class="loading-text">Зареждане...</p>
       </div>
-      <p class="loading-text">Зареждане...</p>
-    </div>
-    <header class="site-header">
-      <div class="header-wrapper">
-        <!-- Лого вляво -->
-        <div class="header-left">
-          <img src="images/logo.png" alt="Лого" class="logo" />
+      <header class="site-header">
+        <div class="header-wrapper">
+          <!-- Лого вляво -->
+          <div class="header-left">
+            <img src="images/logo.png" alt="Лого" class="logo" />
+          </div>
+
+          <!-- Меню в центъра -->
+          <nav class="header-center">
+            <ul>
+              <li><a href="#">Начало</a></li>
+              <li><a href="#">Албуми</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Контакти</a></li>
+            </ul>
+          </nav>
+
+          <!-- Иконки вдясно -->
+          <div class="header-right">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
+      <!-- Мобилно меню -->
+      <div class="mobile-menu" id="mobile-menu">
+        <img src="images/logo.png" alt="Logo" class="mobile-logo" />
+        <div class="mobile-top">
+          <div class="close-btn" id="close-btn">&times;</div>
         </div>
 
-        <!-- Меню в центъра -->
-        <nav class="header-center">
-          <ul>
-            <li><a href="#">Начало</a></li>
-            <li><a href="#">Албуми</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">Контакти</a></li>
-          </ul>
-        </nav>
-
-        <!-- Иконки вдясно -->
-        <div class="header-right">
+        <div class="mobile-social">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-pinterest-p"></i></a>
         </div>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+
+        <ul class="mobile-links">
+          <li><a href="#">Начало</a></li>
+          <li><a href="#">Албуми</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </div>
+
+      <section class="hero">
+        <div class="hero-text">
+          <div class="hero-text-box">
+            <h1>Добре дошъл в моя свят</h1>
+            <p>Фотография с душа</p>
+          </div>
         </div>
-      </div>
-    </header>
-    <!-- Мобилно меню -->
-    <div class="mobile-menu" id="mobile-menu">
-      <img src="images/logo.png" alt="Logo" class="mobile-logo" />
-      <div class="mobile-top">
-        <div class="close-btn" id="close-btn">&times;</div>
-      </div>
-
-      <div class="mobile-social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-      </div>
-
-      <ul class="mobile-links">
-        <li><a href="#">Начало</a></li>
-        <li><a href="#">Албуми</a></li>
-        <li><a href="#">Блог</a></li>
-        <li><a href="#">Контакти</a></li>
-      </ul>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+          <p>&copy; 2025 Marko Uzunov. Всички права запазени.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </footer>
     </div>
 
-    <section class="hero">
-      <div class="hero-text">
-        <div class="hero-text-box">
-          <h1>Добре дошъл в моя свят</h1>
-          <p>Фотография с душа</p>
-        </div>
-      </div>
-    </section>
     <script src="js/script.js"></script>
     <script>
       const hamburger = document.getElementById("hamburger");
