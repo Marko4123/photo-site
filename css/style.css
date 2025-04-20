@@ -83,6 +83,73 @@ body, html {
   .header-right a:hover {
     color: #00ff5e;
   }
+  /* Хамбургер бутон */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+  }
+  
+  /* Мобилно меню */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #111;
+    color: #fff;
+    z-index: 9999;
+    flex-direction: column;
+    padding: 30px;
+  }
+  
+  .mobile-menu.open {
+    display: flex;
+  }
+  
+  .mobile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-btn {
+    font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  }
+  
+  .mobile-social {
+    display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+  }
+  
+  .mobile-links {
+    list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  }
+  
+  .mobile-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
 
 .hero {
     height: 100vh;
@@ -165,5 +232,16 @@ body, html {
         opacity: 1;
     }
 }
+
+@media (max-width: 768px) {
+    .header-center,
+    .header-right {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
 
   

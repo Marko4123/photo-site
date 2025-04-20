@@ -46,8 +46,32 @@
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-pinterest-p"></i></a>
         </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
+    <!-- Мобилно меню -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-top">
+        <div class="close-btn" id="close-btn">&times;</div>
+      </div>
+
+      <div class="mobile-social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+
+      <ul class="mobile-links">
+        <li><a href="#">Начало</a></li>
+        <li><a href="#">Албуми</a></li>
+        <li><a href="#">Блог</a></li>
+        <li><a href="#">Контакт</a></li>
+      </ul>
+    </div>
 
     <section class="hero">
       <div class="hero-text">
@@ -60,10 +84,15 @@
     <script src="js/script.js"></script>
     <script>
       const hamburger = document.getElementById("hamburger");
-      const navMenu = document.querySelector(".nav-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeBtn = document.getElementById("close-btn");
 
       hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
+        mobileMenu.classList.add("open");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
       });
     </script>
   </body>
