@@ -133,6 +133,13 @@ body, html {
     visibility: visible;
     transform: translateY(0);
   }
+
+  .mobile-logo {
+    max-width: 50%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
   
   .mobile-top {
     display: flex;
@@ -230,6 +237,12 @@ body, html {
     align-items: center;
     transition: opacity 0.8s ease;
 }
+.preload-logo {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease;
+  }
+  
 
 .loader-bar {
     width: 200px;
@@ -309,6 +322,11 @@ body, html {
   
     .hamburger {
       display: flex;
+    }
+  }
+  @media (max-width: 480px) {
+    .mobile-logo {
+      max-width: 70%;
     }
   }
 
