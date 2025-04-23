@@ -2,8 +2,7 @@
 <html lang="bg">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Моята Фотография</title>
+    <title>Добре дошъл в моя свят</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,9 +14,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="wrapper">
+      <!-- Loading bar -->
       <div id="preloader">
         <img src="images/logo.png" alt="Лого" class="preload-logo" />
         <div class="loader-bar">
@@ -25,8 +26,10 @@
         </div>
         <p class="loading-text">Зареждане...</p>
       </div>
+
+      <!-- Навигация -->
       <header class="site-header">
-        <div class="header-wrapper">
+        <div class="nav-container">
           <!-- Лого вляво -->
           <div class="header-left">
             <img src="images/logo.png" alt="Лого" class="logo" />
@@ -35,8 +38,8 @@
           <!-- Меню в центъра -->
           <nav class="header-center">
             <ul>
-              <li><a href="#">Начало</a></li>
-              <li><a href="#">Албуми</a></li>
+              <li><a href="#" class="active">Начало</a></li>
+              <li><a href="albums.html">Албуми</a></li>
               <li><a href="#">Блог</a></li>
               <li><a href="#">Контакти</a></li>
             </ul>
@@ -69,33 +72,29 @@
         </div>
 
         <ul class="mobile-links">
-          <li><a href="#">Начало</a></li>
-          <li><a href="#">Албуми</a></li>
+          <li><a href="index-1.html" class="active">Начало</a></li>
+          <li><a href="albums.html">Албуми</a></li>
           <li><a href="#">Блог</a></li>
           <li><a href="#">Контакти</a></li>
         </ul>
       </div>
 
-      <section class="hero">
-        <div class="hero-text">
-          <div class="hero-text-box">
+      <!-- Основно съдържание -->
+      <main class="main-container">
+        <section class="hero">
+          <div class="overlay">
             <h1>Добре дошъл в моя свят</h1>
             <p>Фотография с душа</p>
           </div>
-        </div>
-      </section>
-      <footer class="footer">
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer class="site-footer">
         <div class="footer-container">
-          <p>&copy; 2025 Marko Uzunov. Всички права запазени.</p>
-          <div class="footer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-          </div>
+          <p>&copy; 2025 Моят Свят. Всички права запазени.</p>
         </div>
       </footer>
     </div>
-
     <script src="js/script.js"></script>
     <script>
       const hamburger = document.getElementById("hamburger");

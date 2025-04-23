@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Добре дошъл в моя свят</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Loading bar -->
+      <div id="preloader">
+        <img src="images/logo.png" alt="Лого" class="preload-logo" />
+        <div class="loader-bar">
+          <div class="bar"></div>
+        </div>
+        <p class="loading-text">Зареждане...</p>
+      </div>
+
+      <!-- Навигация -->
+      <header class="site-header">
+        <div class="nav-container">
+          <!-- Лого вляво -->
+          <div class="header-left">
+            <img src="images/logo.png" alt="Лого" class="logo" />
+          </div>
+
+          <!-- Меню в центъра -->
+          <nav class="header-center">
+            <ul>
+              <li><a href="index-1.html">Начало</a></li>
+              <li><a href="albums.html" class="active">Албуми</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Контакти</a></li>
+            </ul>
+          </nav>
+
+          <!-- Иконки вдясно -->
+          <div class="header-right">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
+      <!-- Мобилно меню -->
+      <div class="mobile-menu" id="mobile-menu">
+        <img src="images/logo.png" alt="Logo" class="mobile-logo" />
+        <div class="mobile-top">
+          <div class="close-btn" id="close-btn">&times;</div>
+        </div>
+
+        <div class="mobile-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+
+        <ul class="mobile-links">
+          <li><a href="index-1.html">Начало</a></li>
+          <li><a href="albums.html" class="active">Албуми</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </div>
+
+      <!-- Основно съдържание -->
+      <main class="main-container">
+        <section class="page-banner">
+          <div class="banner-overlay">
+            <h1>МОИТЕ АЛБУМИ</h1>
+          </div>
+        </section>
+        <section class="filter-menu">
+          <div class="filter-container">
+            <ul class="filter-list">
+              <li><a href="#" class="active">ALL</a></li>
+              <li><a href="#">2024</a></li>
+              <li><a href="#">2023</a></li>
+              <li><a href="#">2022</a></li>
+              <li><a href="#">2021</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="gallery">
+          <div class="gallery-container">
+            <div class="gallery-item">
+              <img src="images/img-1.jpg" alt="Road to Home" />
+              <div class="caption">
+                <span class="category">NATURE</span>
+                <h3>Road to Home</h3>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/img-2.jpg" alt="Sweet Blonde" />
+              <div class="caption">
+                <span class="category">PORTRAITS</span>
+                <h3>Sweet Blonde</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/img-2.jpg" alt="Sweet Blonde" />
+              <div class="caption">
+                <span class="category">PORTRAITS</span>
+                <h3>Sweet Blonde</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/img-2.jpg" alt="Sweet Blonde" />
+              <div class="caption">
+                <span class="category">PORTRAITS</span>
+                <h3>Sweet Blonde</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/img-2.jpg" alt="Sweet Blonde" />
+              <div class="caption">
+                <span class="category">PORTRAITS</span>
+                <h3>Sweet Blonde</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/img-2.jpg" alt="Sweet Blonde" />
+              <div class="caption">
+                <span class="category">PORTRAITS</span>
+                <h3>Sweet Blonde</h3>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/img-3.jpg" alt="Sport Fashion" />
+              <div class="caption">
+                <span class="category">FASHION</span>
+                <h3>Sport Fashion</h3>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/hero.jpg" alt="Small Things" />
+              <div class="caption">
+                <span class="category">STUFF</span>
+                <h3>Small Things</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Бутон за зареждане на още снимки -->
+          <div class="load-more-wrapper">
+            <button class="load-more-btn">Зареди повече</button>
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-container">
+          <p>&copy; 2025 Моят Свят. Всички права запазени.</p>
+        </div>
+      </footer>
+    </div>
+    <button id="scrollToTopBtn" title="Към началото">&#8679;</button>
+    <script src="js/script.js"></script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeBtn = document.getElementById("close-btn");
+
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.add("open");
+        hamburger.classList.add("active"); // ☰ ➜ ✖
+      });
+
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        hamburger.classList.remove("active");
+      });
+    </script>
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
