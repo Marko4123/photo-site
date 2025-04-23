@@ -312,7 +312,7 @@ html, body {
 
 .filter-list li a:hover,
 .filter-list li a.active {
-    color: #b9f26a;
+    color: #789e47;
     background-color: rgba(255,255,255,0.05);
 }
 
