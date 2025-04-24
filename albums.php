@@ -1,3 +1,4 @@
+<?php include 'admin/config.php'; ?>
 <!DOCTYPE html>
 <html lang="bg">
   <head>
@@ -40,8 +41,8 @@
           <!-- Меню в центъра -->
           <nav class="header-center">
             <ul>
-              <li><a href="index.html" class="active">Начало</a></li>
-              <li><a href="albums.php">Албуми</a></li>
+              <li><a href="index.html">Начало</a></li>
+              <li><a href="albums.php" class="active">Албуми</a></li>
               <li><a href="#">Блог</a></li>
               <li><a href="#">Контакти</a></li>
             </ul>
@@ -74,8 +75,8 @@
         </div>
 
         <ul class="mobile-links">
-          <li><a href="index.html" class="active">Начало</a></li>
-          <li><a href="albums.php">Албуми</a></li>
+          <li><a href="index.html">Начало</a></li>
+          <li><a href="albums.php" class="active">Албуми</a></li>
           <li><a href="#">Блог</a></li>
           <li><a href="#">Контакти</a></li>
         </ul>
@@ -83,10 +84,50 @@
 
       <!-- Основно съдържание -->
       <main class="main-container">
-        <section class="hero">
-          <div class="overlay">
-            <h1>Добре дошъл в моя свят</h1>
-            <p>Фотография с душа</p>
+        <section class="page-banner">
+          <div class="banner-overlay">
+            <h1>МОИТЕ АЛБУМИ</h1>
+          </div>
+        </section>
+        <section class="filter-menu">
+          <div class="filter-container">
+            <ul class="filter-list" id="filter-list">
+            
+            </ul>
+          </div>
+        </section>
+        <section class="gallery">
+          <div class="gallery-container" id="gallery-container">
+            <?php
+            $limit = 8;
+            $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
+            
+            $stmt = $conn->prepare("
+                SELECT g.id, g.name, g.year, g.created_at, p.image_path
+                FROM galleries g
+                LEFT JOIN photos p ON g.id = p.gallery_id AND p.is_cover = 1
+                ORDER BY g.created_at DESC
+                LIMIT ? OFFSET ?
+            ");
+            $stmt->bind_param("ii", $limit, $offset);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="gallery-item">';
+                echo '  <a href="album.php?id=' . $row['id'] . '">';
+                echo '    <img src="admin/' . htmlspecialchars($row['image_path']) . '" alt="' . htmlspecialchars($row['name']) . '">';
+                echo '    <div class="caption">';
+                echo '      <span class="category">' . htmlspecialchars($row['year']) . '</span>';
+                echo '      <h3>' . htmlspecialchars($row['name']) . '</h3>';
+                echo '    </div>';
+                echo '  </a>';
+                echo '</div>';
+            }
+            ?>
+          </div>
+          <!-- Бутон за зареждане на още снимки -->
+          <div class="load-more-wrapper">
+            <button class="load-more-btn" id="load-more-btn" type="button">Зареди повече</button>
           </div>
         </section>
       </main>
@@ -97,6 +138,8 @@
         </div>
       </footer>
     </div>
+    <button id="scrollToTopBtn" title="Към началото">&#8679;</button>
+    <script src="js/load.js"></script>
     <script src="js/script.js"></script>
     <script>
       const hamburger = document.getElementById("hamburger");
@@ -111,6 +154,24 @@
       closeBtn.addEventListener("click", () => {
         mobileMenu.classList.remove("open");
         hamburger.classList.remove("active");
+      });
+    </script>
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       });
     </script>
   </body>

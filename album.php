@@ -1,3 +1,32 @@
+<?php
+include 'admin/config.php';
+
+$gallery_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+// Взимаме данни за галерията
+$gallery_stmt = $conn->prepare("SELECT * FROM galleries WHERE id = ?");
+$gallery_stmt->bind_param("i", $gallery_id);
+$gallery_stmt->execute();
+$gallery = $gallery_stmt->get_result()->fetch_assoc();
+
+if (!$gallery) {
+  echo "<h2>Галерията не е намерена.</h2>";
+  exit;
+}
+
+// Взимаме коричната снимка
+$cover_stmt = $conn->prepare("SELECT image_path FROM photos WHERE gallery_id = ? AND is_cover = 1 LIMIT 1");
+$cover_stmt->bind_param("i", $gallery_id);
+$cover_stmt->execute();
+$cover = $cover_stmt->get_result()->fetch_assoc();
+$cover_image = $cover ? 'admin/' . $cover['image_path'] : 'images/default-cover.jpg';
+
+// Взимаме всички снимки от албума
+$photos_stmt = $conn->prepare("SELECT * FROM photos WHERE gallery_id = ?");
+$photos_stmt->bind_param("i", $gallery_id);
+$photos_stmt->execute();
+$photos = $photos_stmt->get_result();
+?>
 <!DOCTYPE html>
 <html lang="bg">
   <head>
@@ -15,6 +44,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lightbox2/dist/css/lightbox.min.css">
   </head>
   <body>
     <div class="wrapper">
@@ -40,7 +70,7 @@
           <!-- Меню в центъра -->
           <nav class="header-center">
             <ul>
-              <li><a href="index.html" class="active">Начало</a></li>
+              <li><a href="index.html">Начало</a></li>
               <li><a href="albums.php">Албуми</a></li>
               <li><a href="#">Блог</a></li>
               <li><a href="#">Контакти</a></li>
@@ -74,7 +104,7 @@
         </div>
 
         <ul class="mobile-links">
-          <li><a href="index.html" class="active">Начало</a></li>
+          <li><a href="index.html">Начало</a></li>
           <li><a href="albums.php">Албуми</a></li>
           <li><a href="#">Блог</a></li>
           <li><a href="#">Контакти</a></li>
@@ -83,12 +113,22 @@
 
       <!-- Основно съдържание -->
       <main class="main-container">
-        <section class="hero">
-          <div class="overlay">
-            <h1>Добре дошъл в моя свят</h1>
-            <p>Фотография с душа</p>
-          </div>
-        </section>
+         <!-- Заглавие и фонова снимка от корицата -->
+    <section class="page-banner" style="background-image: url('<?php echo $cover_image; ?>'); background-size: cover;">
+      <div class="banner-overlay">
+        <h1><?php echo htmlspecialchars($gallery['name']); ?></h1>
+      </div>
+    </section>
+        
+    <section class="gallery masonry-gallery">
+      <?php while ($photo = $photos->fetch_assoc()): ?>
+        <div class="masonry-item">
+        <a href="admin/<?php echo $photo['image_path']; ?>" data-lightbox="example-set" data-title="<?php echo htmlspecialchars($photo['title']); ?>">
+            <img src="admin/<?php echo $photo['image_path']; ?>" alt="">
+        </a>
+        </div>
+      <?php endwhile; ?>
+    </section>
       </main>
       <!-- Footer -->
       <footer class="site-footer">
@@ -97,6 +137,7 @@
         </div>
       </footer>
     </div>
+    <button id="scrollToTopBtn" title="Към началото">&#8679;</button>
     <script src="js/script.js"></script>
     <script>
       const hamburger = document.getElementById("hamburger");
@@ -113,5 +154,24 @@
         hamburger.classList.remove("active");
       });
     </script>
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script src="lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
   </body>
 </html>

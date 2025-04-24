@@ -34,8 +34,8 @@
           <!-- Меню в центъра -->
           <nav class="header-center">
             <ul>
-              <li><a href="index.html" class="active">Начало</a></li>
-              <li><a href="albums.html">Албуми</a></li>
+              <li><a href="index.html">Начало</a></li>
+              <li><a href="albums.php">Албуми</a></li>
               <li><a href="#">Блог</a></li>
               <li><a href="#">Контакти</a></li>
             </ul>
@@ -68,8 +68,8 @@
         </div>
 
         <ul class="mobile-links">
-          <li><a href="index.html" class="active">Начало</a></li>
-          <li><a href="albums.html">Албуми</a></li>
+          <li><a href="index.html">Начало</a></li>
+          <li><a href="albums.php">Албуми</a></li>
           <li><a href="#">Блог</a></li>
           <li><a href="#">Контакти</a></li>
         </ul>
